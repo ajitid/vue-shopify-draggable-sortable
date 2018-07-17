@@ -1,6 +1,6 @@
 # Vue 2 components for Shopify Draggable library's Sortable module
 
-_TODO: examples, TOC, handling complex objects, dragging between multiple lists_
+_TODO: examples, TOC, docs for handling complex objects, docs for dragging between multiple lists_
 
 ## Install
 
