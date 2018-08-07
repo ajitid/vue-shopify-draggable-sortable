@@ -57,7 +57,7 @@ That's it! These items are now sortable.
 
 > Nesting of components: List > Items > Handle
 
-`sortable-handle` tells which part of `sortable-item` can be used to click and drag the item. In above code as `sortable-handle` is wrapped around each list item, the whole item becomes a handle.
+`sortable-handle` tells which part of `sortable-item` can be used to click and drag the item. In above code as `sortable-handle` is wrapped around each list item, whole item becomes a handle.
 
 > **Rules**
 >1. Each sortable component accepts exactly one root element in their (default) scoped slot.
