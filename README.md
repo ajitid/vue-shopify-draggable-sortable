@@ -21,7 +21,7 @@ Assuming that you are iterating over items array and you want to make these item
 
 ```html
 <ul>
-  <li v-for="item in items" :id="item.id">{{item.text}}</li>
+  <li v-for="item in items" :key="item.id">{{item.text}}</li>
 </ul>
 ```
 
@@ -44,9 +44,9 @@ As `ul` is immediate parent of these items, these elements will be wrapped by in
 ```html
 <sortable-list v-model="items">
   <ul>
-    <sortable-item>
+    <sortable-item v-for="item in items" :key="item.id">
       <sortable-handle>
-        <li v-for="item in items" :id="item.id">{{item.text}}</li>
+        <li>{{item.text}}</li>
       </sortable-handle>
     </sortable-item>
   </ul>
@@ -63,13 +63,15 @@ That's it! These items are now sortable.
 >1. Each sortable component accepts exactly one root element in their (default) scoped slot.
 >1. Each sortable item should be _immediate_ child of its list container. More on this below.
 
+Let's keep above rules in mind and look at the code below:
+
 ```html
 <sortable-list v-model="items">
   <ul>
     <div>
-      <sortable-item>
+      <sortable-item v-for="item in items" :key="item.id">
         <sortable-handle>
-          <li v-for="item in items" :id="item.id">{{item.text}}</li>
+          <li>{{item.text}}</li>
         </sortable-handle>
       </sortable-item>
     </div>
@@ -77,7 +79,7 @@ That's it! These items are now sortable.
 <sortable-list>
 ```
 
-Above code will not work. `sortable-list` needs `sortable-item` immediately after its root element (in above code this is `ul`). If you need to keep that `div`, then this code needs to be changed to:
+Above code will _not_ work. `sortable-list` needs `sortable-item` immediately after its root element (in above code this is `ul`). If you need to keep that `div`, then this code needs to be changed to:
 
 ```html
 <ul>
