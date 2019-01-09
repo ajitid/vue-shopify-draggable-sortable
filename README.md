@@ -98,5 +98,5 @@ Above code will _not_ work. `sortable-list` needs `sortable-item` immediately af
 
 The `v-model` that you pass to `sortable-list` may not be a simple array. It can be a complex object like:
 
-_[!!STAGNATED!!] Will add docs for complex usage soon_
+_[There are more docs...] Will add docs for complex usage soon_
 _TODO: add hand and grab cursor for `Handle.vue`_
